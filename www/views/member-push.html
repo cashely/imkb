@@ -1,0 +1,14 @@
+<ion-view view-title="手机通讯录">
+	<ion-nav-bar class="bar-positive">
+		<ion-nav-back-button>
+		</ion-nav-back-button>
+	</ion-nav-bar>
+	<ion-content class="has-header">
+		<ion-list>
+			<ion-checkbox ng-repeat="item in contacts | orderBy:item.name.formatted">{{item.name.formatted}}</ion-checkbox>
+			<div class="padding">
+				<button class="button button-positive button-block">推荐</button>
+			</div>
+		</ion-list>
+	</ion-content>
+</ion-view>

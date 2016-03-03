@@ -1,0 +1,97 @@
+/* Empty. Add your own CSS if you like */
+
+body {
+    font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+}
+.index-row-box .button.button-block {
+    margin-top: 0;
+    margin-bottom: 0;
+    min-height: 70px;
+    border-radius: 0;
+    font-size: .8rem;
+    line-height: 1.5;
+}
+.logo{
+	padding: 40px 0 0 0;
+}
+.row + .row{
+	margin-top: 0;
+	padding-top: 10px;
+}
+a,a:hover,a:active{
+	text-decoration: none;
+}
+.item{
+	border-width: 0;
+}
+.list .item:after{
+	position: absolute;
+	-webkit-transform:scaleY(0.5);
+	bottom:0;
+	z-index: 2;
+	left: 0;
+	right: 0;
+	display: block;
+	content:' ';
+	border:1px solid #d9d9d9;
+}
+.tabs-striped.tabs-background-stable .tabs:before{
+	position: absolute;
+	-webkit-transform:scaleY(0.5);
+	top:0;
+	left: 0;
+	right: 0;
+	display: block;
+	content:' ';
+	border:1px solid #d9d9d9;
+}
+.tabs-striped.tabs-color-positive .tab-item.tab-item-active{
+	border-color:transparent;
+}
+.tabs-bottom .tabs{
+	border-bottom-width:0;
+}
+.index{
+	background: url(../img/bg.jpg) top center no-repeat;
+	background-size: 100% 100%;
+}
+.col{
+	white-space: normal;
+}
+.login{
+	background:url(../img/bg_login.jpg) top center no-repeat;
+	background-size:cover;
+}
+.login-logo{
+	padding-top: 80px;
+}
+.login-form{
+	background-color: inherit;
+}
+.login-form .item{
+	background-color: rgba(255,255,255,.3);
+	border-radius:100px!important;
+	margin:0;
+	
+}
+.login-form .item + .item{
+	margin-top: 15px;
+}
+.login-form .item input{
+	color: #fff;
+}
+.login-form .item:after{
+	border-width:0; 
+}
+.login .button.button-energized{
+	border-radius: 100px;
+}
+.login  .placeholder-icon:first-child{
+	padding-right: 20px;
+}
+.login ::-webkit-input-placeholder{
+	color: #fff;
+}
+.item.item-text-wrap{
+	text-align: justify;
+}

@@ -1,0 +1,22 @@
+<ion-view>
+	<ion-pane class="login">
+        <div class="ui top banner test ad" data-text="顶部栏"></div>
+        <div class="login-logo text-center padding">
+            <img width="280" ng-src="img/logo_login.png">
+        </div>
+		<div class="list list-inset login-form">
+            <label class="item item-input">
+                <i class="icon uk-icon-user light uk-icon-small uk-icon-justify placeholder-icon"></i>
+                <input type="text" ng-model="username" class="userName" placeholder="帐号">
+            </label>
+            <label class="item item-input">
+                <i class="icon uk-icon-lock light uk-icon-small uk-icon-justify placeholder-icon"></i>
+                <input type="password" ng-model="password" class="passWord" placeholder="密码">
+            </label>
+        </div>
+        <div class="padding">
+            <button class="button button-energized button-block" ng-click="checkLogin()">登 录</button>
+        </div>
+        <div class="padding text-center"><a class="light" ui-sref="reg.code">注册帐号</a></div>
+	</ion-pane>
+</ion-view>

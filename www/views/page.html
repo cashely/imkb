@@ -1,0 +1,42 @@
+<div class="modal">
+	  <ion-header-bar align-title="left" class="bar-positive">
+			<div class="buttons">
+			    <button class="button button-clear" ng-click="hidePage()">
+			    	<i class="icon ion-ios-arrow-back"></i>
+			    </button>
+			  </div>
+			  <h1 class="title">{{page.title}}</h1>
+			  <div class="buttons">
+			  	<button class="button"><i class="icon ion-ios-heart-outline"></i></button>
+			    <button on-tap="sharePage()" class="button"><i class="icon ion-share"></i></button>
+			  </div>
+		</ion-header-bar>
+		<ion-side-menus>
+  <!-- Left menu -->
+  <ion-side-menu width="200" side="left" is-enabled=false>
+  	<ion-content class="has-header">
+  		<ul class="has-header" class="list">
+	  		<li class="item" ng-repeat="item in page.sms">
+	  			{{item.title}}
+	  		</li>
+	  	</ul>
+  	</ion-content>
+  </ion-side-menu>
+
+  <ion-side-menu-content edge-drag-threshold="true" drag-content="true">
+		<ion-content delegate-handle="pageScroll">
+			<div class="card" ng-repeat="item in page.sms">
+				<div class="item item-divider">
+				   {{item.title}}
+				  </div>
+				  <div class="item item-text-wrap">
+				  {{item.content}}
+				  </div>
+			</div>
+			<div class="padding text-center">
+				<button class="button button-positive button-small">查看全部>></button>
+			</div>
+		</ion-content>
+  </ion-side-menu-content>
+</ion-side-menus>
+</div>
