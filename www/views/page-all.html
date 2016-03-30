@@ -1,0 +1,31 @@
+<div class="modal" ng-controller="pageAllController">
+<ion-pane>
+  <div class="slider-bar">
+    <button class="button button-calm icon ion-android-arrow-up button-block" onClick="iconGoTop(this)"></button>
+  </div>
+  <ion-header-bar align-title="left" class="bar-positive">
+        <div class="buttons">
+            <button class="button button-clear" ng-click="hideAllPage()">
+                <i class="icon ion-ios-arrow-back"></i>
+            </button>
+          </div>
+          <h1 class="title">{{pageAll.title}}</h1>
+          <div class="buttons">
+            <button class="button" ng-show="page.isUserHouse == 0" on-tap="addCollect()"><i class="icon ion-ios-heart-outline"></i></button>
+            <button class="button" ng-show="page.isUserHouse == 1" on-tap="removeCollect()"><i class="icon ion-ios-heart"></i></button>
+            <button class="button" on-tap="showEditPage()"><i class="icon ion-ios-compose-outline"></i></button>
+            <button on-tap="sharePage()" class="button"><i class="icon ion-share"></i></button>
+          </div>
+    </ion-header-bar>
+        <ion-content class="slider-bar-p" overflow-scroll="true">
+            <div class="card" ng-repeat="item in pageAll.sms">
+                <div class="item item-divider">
+                   {{item.title}}
+                  </div>
+                  <div class="item item-text-wrap">
+                  {{item.content}}
+                  </div>
+            </div>
+        </ion-content>
+</ion-pane>
+</div>

@@ -7,24 +7,12 @@
 			  </div>
 			  <h1 class="title">{{page.title}}</h1>
 			  <div class="buttons">
-			  	<button class="button"><i class="icon ion-ios-heart-outline"></i></button>
+			  	<button class="button" ng-hide="page.isUserHouse" on-tap="addCollect()"><i class="icon ion-ios-heart-outline"></i></button>
+			  	<button class="button" ng-show="page.isUserHouse" on-tap="removeCollect()"><i class="icon ion-ios-heart"></i></button>
 			    <button on-tap="sharePage()" class="button"><i class="icon ion-share"></i></button>
 			  </div>
 		</ion-header-bar>
-		<ion-side-menus>
-  <!-- Left menu -->
-  <ion-side-menu width="200" side="left" is-enabled=false>
-  	<ion-content class="has-header">
-  		<ul class="has-header" class="list">
-	  		<li class="item" ng-repeat="item in page.sms">
-	  			{{item.title}}
-	  		</li>
-	  	</ul>
-  	</ion-content>
-  </ion-side-menu>
-
-  <ion-side-menu-content edge-drag-threshold="true" drag-content="true">
-		<ion-content delegate-handle="pageScroll">
+		<ion-content delegate-handle="pagepScroll" id="pagepScroll">
 			<div class="card" ng-repeat="item in page.sms">
 				<div class="item item-divider">
 				   {{item.title}}
@@ -34,9 +22,7 @@
 				  </div>
 			</div>
 			<div class="padding text-center">
-				<button class="button button-positive button-small">查看全部>></button>
+				<button class="button button-positive button-small" on-tap="showFullPage()">看全部>></button>
 			</div>
 		</ion-content>
-  </ion-side-menu-content>
-</ion-side-menus>
 </div>

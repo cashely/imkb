@@ -1,0 +1,37 @@
+<ion-view view-title="{{serviceEditPage.title}} {{serviceEditPage.subDate}}">
+    <ion-nav-bar class="bar-positive">
+        <ion-nav-back-button></ion-nav-back-button>
+    </ion-nav-bar>
+    <ion-content>
+        <div class="list">
+          <label class="item item-input">
+            <span class="input-label item-note text-right">提交时间:</span>
+            <span class="col">{{serviceEditPage.subDate}}</span>
+          </label>
+          <label class="item item-input">
+            <span class="input-label item-note text-right">受理时间:</span>
+            <span class="col">{{serviceEditPage.acceptDate || '暂无'}}</span>
+          </label>
+          <label class="item item-input">
+            <span class="input-label item-note text-right">受理状态:</span>
+            <span class="col">{{serviceEditPage.status}}</span>
+          </label>
+          <label class="item item-input">
+            <span class="input-label item-note text-right">纠错内容:</span>
+            <span class="col">{{serviceEditPage.errContent}}</span>
+          </label>
+          <label class="item item-input">
+            <span class="input-label item-note text-right">纠错结果:</span>
+            <span class="col">{{serviceEditPage.errResult}}</span>
+          </label>
+          <label class="item item-input">
+            <span class="input-label item-note text-right">纠错依据:</span>
+            <span class="col">{{serviceEditPage.errBasis}}</span>
+          </label>
+          <label class="item item-input">
+            <span class="input-label item-note text-right">服务商回复:</span>
+            <span class="col">{{serviceEditPage.reply || '暂无'}}</span>
+          </label>
+        </div>
+    </ion-content>
+</ion-view>

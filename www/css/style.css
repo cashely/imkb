@@ -12,19 +12,19 @@ body {
     line-height: 1.5;
 }
 .logo{
-	padding: 40px 0 0 0;
+	padding: 20px 0 0 0;
 }
 .row + .row{
 	margin-top: 0;
-	padding-top: 10px;
+	/*padding-top: 10px;*/
 }
 a,a:hover,a:active{
 	text-decoration: none;
 }
-.item{
+/*.item{
 	border-width: 0;
-}
-.list .item:after{
+}*/
+/*.list .item:after{
 	position: absolute;
 	-webkit-transform:scaleY(0.5);
 	bottom:0;
@@ -34,7 +34,7 @@ a,a:hover,a:active{
 	display: block;
 	content:' ';
 	border:1px solid #d9d9d9;
-}
+}*/
 .tabs-striped.tabs-background-stable .tabs:before{
 	position: absolute;
 	-webkit-transform:scaleY(0.5);
@@ -72,7 +72,7 @@ a,a:hover,a:active{
 	background-color: rgba(255,255,255,.3);
 	border-radius:100px!important;
 	margin:0;
-	
+
 }
 .login-form .item + .item{
 	margin-top: 15px;
@@ -81,7 +81,7 @@ a,a:hover,a:active{
 	color: #fff;
 }
 .login-form .item:after{
-	border-width:0; 
+	border-width:0;
 }
 .login .button.button-energized{
 	border-radius: 100px;
@@ -94,4 +94,88 @@ a,a:hover,a:active{
 }
 .item.item-text-wrap{
 	text-align: justify;
+}
+.share > div{
+	line-height: 2;
+	font-size: 12px;
+}
+.share > div > span{
+	display: block;
+	width: 45px;
+	height: 45px;
+	margin: 0 auto;
+	border-radius: 100%;
+	background-size:60% 60%;
+}
+span.icon-qq{
+	background:url(../img/qq.png) center center no-repeat;
+}
+span.icon-wechat{
+	background:url(../img/wechat.png) center center no-repeat;
+}
+span.icon-qqzone{
+	background:url(../img/qqzone.png) center center no-repeat;
+}
+span.icon-wechat-friends{
+	background:url(../img/wechat-friends.png) center center no-repeat;
+}
+.adv{
+	width: 100%;
+	background-color: #fff;
+}
+.adv img{
+	display: block;
+	width: 100%;
+	height: auto;
+	max-height: 80px;
+}
+.company-intro{
+  font-size: 20px;
+}
+.company-intro p{
+  text-indent: 2em;
+  line-height: 1.5;
+  text-align: justify;
+  padding: 0 20px;
+}
+h2 .uk-badge{
+  margin-top: -3px;
+}
+*{
+  -webkit-user-select:auto!important;
+  -moz-user-select:auto!important;
+  user-select:auto!important;
+}
+.close-input{
+  position: absolute;
+  right: 10px;
+  top: 5px;
+  color:#999;
+}
+.slider-bar{
+  position: absolute;
+  bottom: 20px;
+  display: block;
+  left: 5px;
+  z-index: 9;
+}
+.slider-bar button.button-block{
+  border-radius: 0;
+  width: 50px;
+  margin-top: 0;
+  margin-bottom: 0;
+  min-width: auto;
+  min-height: auto;
+  font-size: 14px;
+  line-height: 1;
+  text-shadow: 0 0 2px #666;
+  height: 50px;
+  padding: 8px;
+  opacity: .7;
+}
+.overflow-scroll .scroll{
+  height: auto;
+}
+.slider-bar button.icon:before{
+  line-height: inherit;
 }
