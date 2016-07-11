@@ -17,8 +17,7 @@
 				<div class="item item-divider">
 				   {{item.title}}
 				  </div>
-				  <div class="item item-text-wrap">
-				  {{item.content}}
+				  <div class="item item-text-wrap" ng-bind-html="item.content|htmlContent">
 				  </div>
 			</div>
 			<div class="padding text-center">

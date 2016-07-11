@@ -1,0 +1,115 @@
+{
+    "cordova-plugin-whitelist": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-whitelist"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "cordova-plugin-contacts": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-contacts"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "cordova-plugin-inappbrowser": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-inappbrowser"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "com.phonegap.plugins.speech": {
+        "source": {
+            "type": "git",
+            "url": "https://github.com/jcsmesquita/cordova-speechrecognition",
+            "subdir": "."
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "cordova-plugin-qqsdk": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-qqsdk"
+        },
+        "is_top_level": true,
+        "variables": {
+            "QQ_APP_ID": "1105220676"
+        }
+    },
+    "cn.jpush.phonegap.JPushPlugin": {
+        "source": {
+            "type": "git",
+            "url": "https://github.com/jpush/jpush-phonegap-plugin.git",
+            "subdir": "."
+        },
+        "is_top_level": true,
+        "variables": {
+            "API_KEY": "062ac6ee8ec5621bed2956d2"
+        }
+    },
+    "cordova-plugin-crosswalk-webview": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-crosswalk-webview"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "cordova-plugin-splashscreen": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-splashscreen"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "ionic-plugin-keyboard": {
+        "source": {
+            "type": "registry",
+            "id": "ionic-plugin-keyboard"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "cordova-plugin-statusbar": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-statusbar"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "cordova-plugin-device": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-device"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "cordova-plugin-console": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-console"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "cordova-plugin-wechat": {
+        "source": {
+            "type": "git",
+            "url": "https://github.com/xu-li/cordova-plugin-wechat",
+            "subdir": "."
+        },
+        "is_top_level": true,
+        "variables": {
+            "WECHATAPPID": "wx01786b46ff72ad13"
+        }
+    }
+}

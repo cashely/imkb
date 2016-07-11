@@ -3,19 +3,11 @@
         <div class="login-logo text-center padding">
             <img width="100" ng-src="img/logo_login.png">
         </div>
-		<div class="list list-inset login-form">
-            <label class="item item-input">
-                <i class="icon uk-icon-user light uk-icon-small uk-icon-justify placeholder-icon"></i>
-                <input type="text" ng-model="username" class="userName" placeholder="帐号">
-            </label>
-            <label class="item item-input">
-                <i class="icon uk-icon-lock light uk-icon-small uk-icon-justify placeholder-icon"></i>
-                <input type="password" ng-model="password" class="passWord" placeholder="密码">
-            </label>
-        </div>
-        <div class="padding">
+        <!-- <div class="padding">
             <button class="button button-energized button-block" ng-click="checkLogin()">登 录</button>
-        </div>
-        <div class="padding text-center"><a class="light" ui-sref="reg.code">注册帐号</a></div>
+						<button class="button button-energized button-block" ng-click="wechatLogin()">微信登录</button>
+        </div> -->
+        <!-- <div class="padding text-center"><a class="light" ng-click="wechatLogin()" ui-sref="reg.code">微信登录</a></div> -->
+				<div class="padding text-center" style="padding-top:150px;"><a class="light button-login-wechat" ng-click="wechatLogin()"><img ng-src="img/login-wechat.png" width="25" style="vertical-align:middle;" /> 使用微信帐号登录</a></div>
 	</ion-pane>
 </ion-view>

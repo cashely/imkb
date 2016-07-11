@@ -1,0 +1,35 @@
+<div class="modal" ng-controller="editPageController">
+	  <ion-header-bar align-title="center" class="bar-positive">
+			<div class="buttons">
+			    <button class="button button-clear" on-tap="hideEditPage()">
+			    	<i class="icon ion-ios-arrow-back"></i>
+			    </button>
+			  </div>
+			  <h1 class="title">说明书纠错</h1>
+		</ion-header-bar>
+  	<ion-content class="has-header">
+      <div class="list">
+        <div class="item item-input item-select">
+          <div class="input-label item-note">纠错内容:</div>
+          <select ng-model="edit.tag" ng-options="tag.target for tag in pageTag">
+            <option value=''>请选择纠错内容标签</option>
+          </select>
+        </div>
+        <div class="item item-divider">
+          纠错结果<span class="assertive">(必填)</span>
+        </div>
+        <label class="item item-input">
+          <textarea placeholder="请输入您的反馈建议～" ng-model="edit.content" style="height:80px;">{{page.tag}}</textarea>
+        </label>
+        <div class="item item-divider">
+          纠错依据
+        </div>
+        <label class="item item-input">
+          <input type="text" ng-model="edit.source" placeholder="请输入纠正内容来源"/>
+        </label>
+        <div class="padding">
+          <button class="button button-positive button-block" on-tap="editCommit()">提交</button>
+        </div>
+      </div>
+  	</ion-content>
+</div>

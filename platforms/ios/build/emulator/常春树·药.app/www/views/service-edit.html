@@ -1,0 +1,23 @@
+<ion-view view-title="说明书纠错">
+    <ion-nav-bar class="bar-positive">
+        <ion-nav-back-button></ion-nav-back-button>
+    </ion-nav-bar>
+    <ion-content>
+        <ul class="list">
+            <li class="item item-icon-right" ng-repeat="item in serviceEditList" ui-sref="index.service-edit-page({id:item.id})">
+                <div class="row">
+                    <h2 class="col-75">
+                        {{item.tradeName ? (item.tradeName+' ') : ''}}{{item.genericName}}
+                    </h2>
+                    <span class="item-note">{{item.updateDate}}</span>
+                </div>
+                <p class="row" style="padding-top:0;">
+                   <span class="col-75 item-content">{{item.spec}} {{item.manufacturerShort}} {{item.brandName}}</span>
+                   <span>{{item.status}}</span>
+                </p>
+                <i class="icon ion-ios-arrow-right button-small item-note"></i>
+            </li>
+        </ul>
+        <ion-infinite-scroll ng-if="isScrollServiceEditList" on-infinite="loadMoreServiceEditList()" distance="2%"></ion-infinite-scroll>
+    </ion-content>
+</ion-view>

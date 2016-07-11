@@ -1,0 +1,309 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {
+            "framework": {
+                "parents": {
+                    "CFNetwork.framework": [
+                        {
+                            "xml": true,
+                            "count": 1
+                        }
+                    ],
+                    "CoreFoundation.framework": [
+                        {
+                            "xml": true,
+                            "count": 1
+                        }
+                    ],
+                    "CoreTelephony.framework": [
+                        {
+                            "xml": true,
+                            "count": 1
+                        },
+                        {
+                            "xml": false,
+                            "count": 2
+                        }
+                    ],
+                    "SystemConfiguration.framework": [
+                        {
+                            "xml": true,
+                            "count": 1
+                        },
+                        {
+                            "xml": false,
+                            "count": 2
+                        }
+                    ],
+                    "CoreGraphics.framework": [
+                        {
+                            "xml": true,
+                            "count": 1
+                        },
+                        {
+                            "xml": false,
+                            "count": 4
+                        }
+                    ],
+                    "Foundation.framework": [
+                        {
+                            "xml": true,
+                            "count": 1
+                        }
+                    ],
+                    "UIKit.framework": [
+                        {
+                            "xml": true,
+                            "count": 1
+                        }
+                    ],
+                    "Security.framework": [
+                        {
+                            "xml": true,
+                            "count": 1
+                        },
+                        {
+                            "xml": false,
+                            "count": 2
+                        }
+                    ],
+                    "libz.dylib": [
+                        {
+                            "xml": true,
+                            "count": 1
+                        },
+                        {
+                            "xml": false,
+                            "count": 2
+                        }
+                    ],
+                    "AddressBook.framework": [
+                        {
+                            "xml": true,
+                            "count": 1
+                        }
+                    ],
+                    "AddressBookUI.framework": [
+                        {
+                            "xml": true,
+                            "count": 1
+                        }
+                    ],
+                    "libiconv.dylib": [
+                        {
+                            "xml": false,
+                            "count": 1
+                        }
+                    ],
+                    "libsqlite3.dylib": [
+                        {
+                            "xml": false,
+                            "count": 1
+                        }
+                    ],
+                    "libstdc++.dylib": [
+                        {
+                            "xml": false,
+                            "count": 1
+                        }
+                    ],
+                    "libsqlite3.0.dylib": [
+                        {
+                            "xml": false,
+                            "count": 1
+                        }
+                    ],
+                    "libstdc++.6.dylib": [
+                        {
+                            "xml": false,
+                            "count": 1
+                        }
+                    ]
+                }
+            },
+            "config.xml": {
+                "parents": {
+                    "/*": [
+                        {
+                            "xml": "<feature name=\"JPushPlugin\"><param name=\"ios-package\" value=\"JPushPlugin\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Console\"><param name=\"ios-package\" value=\"CDVLogger\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Contacts\"><param name=\"ios-package\" value=\"CDVContacts\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Device\"><param name=\"ios-package\" value=\"CDVDevice\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"InAppBrowser\"><param name=\"ios-package\" value=\"CDVInAppBrowser\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"YCQQ\"><param name=\"ios-package\" value=\"YCQQ\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<access origin=\"https://openmobile.qq.com/*\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<access origin=\"http://qzonestyle.gtimg.cn/*\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<access origin=\"http://pub.idqqimg.com/*\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<access origin=\"http://qzs.qq.com/*\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<access origin=\"http://m.qzone.com/*\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<access origin=\"http://*.ptlogin2.qq.com/*\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<access origin=\"http://*.qq.com/*\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<access origin=\"http://q2.qlogo.cn/*\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<preference name=\"QQ_APP_ID\" value=\"1105220676\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"SplashScreen\"><param name=\"ios-package\" value=\"CDVSplashScreen\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"StatusBar\"><param name=\"ios-package\" value=\"CDVStatusBar\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<preference name=\"StatusBarOverlaysWebView\" value=\"true\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<preference name=\"StatusBarStyle\" value=\"lightcontent\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Wechat\"><param name=\"ios-package\" value=\"CDVWechat\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<preference name=\"WECHATAPPID\" value=\"wx01786b46ff72ad13\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Keyboard\"><param name=\"ios-package\" onload=\"true\" value=\"IonicKeyboard\" /></feature>",
+                            "count": 1
+                        }
+                    ]
+                }
+            },
+            "*PushConfig.plist": {
+                "parents": {
+                    "APP_KEY": [
+                        {
+                            "xml": "<string>062ac6ee8ec5621bed2956d2</string>",
+                            "count": 1
+                        }
+                    ]
+                }
+            },
+            "*-Info.plist": {
+                "parents": {
+                    "CFBundleURLTypes": [
+                        {
+                            "xml": "<array><dict><key>CFBundleTypeRole</key><string>Editor</string><key>CFBundleURLName</key><string>tencentopenapi</string><key>CFBundleURLSchemes</key><array><string>tencent1105220676</string></array></dict></array>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<array><dict><key>CFBundleURLName</key><string>weixin</string><key>CFBundleURLSchemes</key><array><string>wx01786b46ff72ad13</string></array></dict></array>",
+                            "count": 1
+                        }
+                    ],
+                    "NSAppTransportSecurity": [
+                        {
+                            "xml": "<dict><key>NSAllowsArbitraryLoads</key><true /></dict>",
+                            "count": 2
+                        }
+                    ],
+                    "LSApplicationQueriesSchemes": [
+                        {
+                            "xml": "<array><string>mqqapi</string><string>mqq</string><string>mqqOpensdkSSoLogin</string><string>mqqconnect</string><string>mqqopensdkdataline</string><string>mqqopensdkgrouptribeshare</string><string>mqqopensdkfriend</string><string>mqqopensdkapi</string><string>mqqopensdkapiV2</string><string>mqqopensdkapiV3</string><string>mqzoneopensdk</string><string>wtloginmqq</string><string>wtloginmqq2</string><string>mqqwpa</string><string>mqzone</string><string>mqzonev2</string><string>mqzoneshare</string><string>wtloginqzone</string><string>mqzonewx</string><string>mqzoneopensdkapiV2</string><string>mqzoneopensdkapi19</string><string>mqzoneopensdkapi</string><string>mqzoneopensdk</string></array>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<array><string>weixin</string><string>wechat</string></array>",
+                            "count": 1
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    "installed_plugins": {
+        "cn.jpush.phonegap.JPushPlugin": {
+            "API_KEY": "062ac6ee8ec5621bed2956d2",
+            "PACKAGE_NAME": "com.immo.imkb"
+        },
+        "com.phonegap.plugins.speech": {
+            "PACKAGE_NAME": "com.immo.imkb"
+        },
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "com.immo.imkb"
+        },
+        "cordova-plugin-contacts": {
+            "PACKAGE_NAME": "com.immo.imkb"
+        },
+        "cordova-plugin-crosswalk-webview": {
+            "PACKAGE_NAME": "com.immo.imkb"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.immo.imkb"
+        },
+        "cordova-plugin-inappbrowser": {
+            "PACKAGE_NAME": "com.immo.imkb"
+        },
+        "cordova-plugin-qqsdk": {
+            "QQ_APP_ID": "1105220676",
+            "PACKAGE_NAME": "com.immo.imkb"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "com.immo.imkb"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "com.immo.imkb"
+        },
+        "cordova-plugin-wechat": {
+            "WECHATAPPID": "wx01786b46ff72ad13",
+            "PACKAGE_NAME": "com.immo.imkb"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.immo.imkb"
+        },
+        "ionic-plugin-keyboard": {
+            "PACKAGE_NAME": "com.immo.imkb"
+        }
+    },
+    "dependent_plugins": {}
+}

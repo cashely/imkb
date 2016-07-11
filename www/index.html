@@ -97,8 +97,8 @@
                 <div class="item row padding-vertical item-button-right">
                     <div class="col item-note col-20">用户帐号</div>
                     <div class="col">{{person.data.userName}}</div>
-                    <button class="button button-clear" ng-click="editPassword()">
-                    <span class="item-note positive">修改密码</span></button>
+                    <!-- <button class="button button-clear" ng-click="editPassword()">
+                    <span class="item-note positive">修改密码</span></button> -->
                 </div>
                 <div class="item row padding-vertical item-button-right">
                     <div class="col item-note col-20">昵 称</div>
@@ -325,8 +325,7 @@
                     <div class="item item-divider">
                        {{item.title}}
                       </div>
-                      <div class="item item-text-wrap">
-                      {{item.content}}
+                      <div class="item item-text-wrap" ng-bind-html="item.content|htmlContent">
                       </div>
                 </div>
             </ion-content>

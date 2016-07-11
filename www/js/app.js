@@ -145,6 +145,7 @@ angular.module('starter', ['ionic', 'starter.controller', 'starter.config', 'ngC
             id: id,
             sign: 0,
             indexPath: 1,
+            imagePath:$rootScope.imagePath,
             createUser: localStorage.getItem('sid')
           }
         }).success(function(res) {
@@ -230,7 +231,8 @@ angular.module('starter', ['ionic', 'starter.controller', 'starter.config', 'ngC
         });
       });
     };
-    $rootScope.serviceAddress = "http://192.168.1.235:8082/imkb/";
+    $rootScope.serviceAddress = "http://192.168.1.235:8082/imkb/imkbapp/";
+    $rootScope.imagePath = "http://192.168.1.235:8082";
     // $rootScope.serviceAddress = "http://192.168.1.103:8080/imkb/";
     // $rootScope.serviceAddress = "http://192.168.1.103:8088/imkb/";
 
@@ -378,3 +380,8 @@ angular.module('starter', ['ionic', 'starter.controller', 'starter.config', 'ngC
       }
     };
   })
+  .filter('htmlContent',['$sce', function($sce) {
+	return function(input) {
+		return $sce.trustAsHtml(input);
+	}
+}])
