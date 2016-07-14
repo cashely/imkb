@@ -8,4 +8,5 @@ dependencies: \
   /Users/cashely/Documents/cashely.shi/coding/imkb/platforms/ios/build/emulator/include/Cordova/NSMutableArray+QueueAdditions.h \
   /Users/cashely/Documents/cashely.shi/coding/imkb/platforms/ios/build/emulator/include/Cordova/CDVCommandDelegate.h \
   /Users/cashely/Documents/cashely.shi/coding/imkb/platforms/ios/build/emulator/include/Cordova/CDVInvokedUrlCommand.h \
+  /Users/cashely/Documents/cashely.shi/coding/imkb/platforms/ios/build/emulator/include/Cordova/CDVWebViewEngineProtocol.h \
   /Users/cashely/Documents/cashely.shi/coding/imkb/platforms/ios/imkb/Plugins/ionic-plugin-keyboard/UIWebViewExtension.h

@@ -1,0 +1,34 @@
+<ion-view view-title="个人中心">
+	<ion-nav-bar class="bar-positive">
+		<ion-nav-back-button></ion-nav-back-button>
+		<ion-nav-buttons side="left">
+		</ion-nav-buttons>
+	</ion-nav-bar>
+	<ion-content>
+		<div class="list">
+			<a ui-sref="index.member-data" class="item item-icon-left item-icon-right">
+				<i class="icon ion-ios-person item-note"></i>
+				个人信息
+				<i class="icon item-note ion-ios-arrow-right button-small"></i>
+			</a>
+			<a ui-sref="index.member-produceList" class="item item-icon-left item-icon-right">
+				<i class="icon ion-android-cloud-circle item-note"></i>
+				产品介绍
+				<i class="icon item-note ion-ios-arrow-right button-small"></i>
+			</a>
+			<a ui-sref="index.member-collect" class="item item-icon-left item-icon-right">
+				<i class="icon ion-ios-bookmarks item-note"></i>
+				个人收藏
+				<span class="badge badge-assertive">121</span>
+			</a>
+			<a ui-sref="index.member-push" class="item item-icon-left item-icon-right">
+				<i class="icon ion-share item-note"></i>
+				推荐给朋友
+				<i class="icon item-note ion-ios-arrow-right button-small"></i>
+			</a>
+			<div class="padding">
+				<button ng-click="loginOut()" class="button button-assertive button-block">注销</button>
+			</div>
+		</div>
+	</ion-content>
+</ion-view>

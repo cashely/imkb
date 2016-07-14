@@ -7,14 +7,6 @@
         "is_top_level": true,
         "variables": {}
     },
-    "cordova-plugin-contacts": {
-        "source": {
-            "type": "registry",
-            "id": "cordova-plugin-contacts"
-        },
-        "is_top_level": true,
-        "variables": {}
-    },
     "cordova-plugin-inappbrowser": {
         "source": {
             "type": "registry",
@@ -31,27 +23,6 @@
         },
         "is_top_level": true,
         "variables": {}
-    },
-    "cordova-plugin-qqsdk": {
-        "source": {
-            "type": "registry",
-            "id": "cordova-plugin-qqsdk"
-        },
-        "is_top_level": true,
-        "variables": {
-            "QQ_APP_ID": "1105220676"
-        }
-    },
-    "cn.jpush.phonegap.JPushPlugin": {
-        "source": {
-            "type": "git",
-            "url": "https://github.com/jpush/jpush-phonegap-plugin.git",
-            "subdir": "."
-        },
-        "is_top_level": true,
-        "variables": {
-            "API_KEY": "062ac6ee8ec5621bed2956d2"
-        }
     },
     "cordova-plugin-crosswalk-webview": {
         "source": {
@@ -85,14 +56,6 @@
         "is_top_level": true,
         "variables": {}
     },
-    "cordova-plugin-device": {
-        "source": {
-            "type": "registry",
-            "id": "cordova-plugin-device"
-        },
-        "is_top_level": true,
-        "variables": {}
-    },
     "cordova-plugin-console": {
         "source": {
             "type": "registry",
@@ -110,6 +73,36 @@
         "is_top_level": true,
         "variables": {
             "WECHATAPPID": "wx01786b46ff72ad13"
+        }
+    },
+    "cordova-plugin-device": {
+        "source": {
+            "type": "git",
+            "url": "https://github.com/apache/cordova-plugin-device.git",
+            "subdir": "."
+        },
+        "is_top_level": false,
+        "variables": {}
+    },
+    "jpush-phonegap-plugin": {
+        "source": {
+            "type": "registry",
+            "id": "jpush-phonegap-plugin"
+        },
+        "is_top_level": true,
+        "variables": {
+            "API_KEY": "387fb1e2fa738fb356cb37a8"
+        }
+    },
+    "cordova-plugin-qqsdk": {
+        "source": {
+            "type": "git",
+            "url": "https://github.com/iVanPan/Cordova_QQ.git",
+            "subdir": "."
+        },
+        "is_top_level": true,
+        "variables": {
+            "QQ_APP_ID": "1105465175"
         }
     }
 }

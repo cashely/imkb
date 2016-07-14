@@ -38,7 +38,6 @@ angular.module('starter', ['ionic', 'starter.controller', 'starter.config', 'ngC
 
 
     $ionicPlatform.ready(function() {
-      console.log('检测平台:', Pusher);
       Pusher.init();
       // 清除bradge
       Pusher.resetBradge();
@@ -48,6 +47,7 @@ angular.module('starter', ['ionic', 'starter.controller', 'starter.config', 'ngC
       document.addEventListener("jpush.receiveMessage", Pusher.onReceiveMessage, false);
       // 获取通知内容
       document.addEventListener("jpush.receiveNotification", Pusher.onReceiveNotification, false);
+      console.log('检测平台:', Pusher);
       // $cordovaStatusbar.style(2);
       if (window.cordova && window.cordova.plugins.Keyboard) {
         // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
@@ -144,7 +144,7 @@ angular.module('starter', ['ionic', 'starter.controller', 'starter.config', 'ngC
           params: {
             id: id,
             sign: 0,
-            indexPath: 1,
+            indexPath: '5241e1d1ef224c6db86356560bf6ddd5',
             imagePath:$rootScope.imagePath,
             createUser: localStorage.getItem('sid')
           }
@@ -179,7 +179,7 @@ angular.module('starter', ['ionic', 'starter.controller', 'starter.config', 'ngC
         method: 'POST',
         params: {
           sourceId: $rootScope.page.id,
-          indexPath: 1,
+          indexPath: '5241e1d1ef224c6db86356560bf6ddd5',
           createUser: localStorage.getItem('sid')
         }
       }).success(function(res) {
@@ -195,7 +195,7 @@ angular.module('starter', ['ionic', 'starter.controller', 'starter.config', 'ngC
         method: 'POST',
         params: {
           sourceId: $rootScope.page.id,
-          indexPath: 1,
+          indexPath: '5241e1d1ef224c6db86356560bf6ddd5',
           createUser: localStorage.getItem('sid')
         }
       }).success(function(res) {
@@ -231,8 +231,8 @@ angular.module('starter', ['ionic', 'starter.controller', 'starter.config', 'ngC
         });
       });
     };
-    $rootScope.serviceAddress = "http://192.168.1.235:8082/imkb/imkbapp/";
-    $rootScope.imagePath = "http://192.168.1.235:8082";
+    $rootScope.serviceAddress = "http://www.immortalshealth.com/imkb/imkbapp/";
+    $rootScope.imagePath = "http://www.immortalshealth.com/imkb/";
     // $rootScope.serviceAddress = "http://192.168.1.103:8080/imkb/";
     // $rootScope.serviceAddress = "http://192.168.1.103:8088/imkb/";
 
@@ -330,9 +330,11 @@ angular.module('starter', ['ionic', 'starter.controller', 'starter.config', 'ngC
         };
       },
       onOpenNotification: function(event) {
+
         if (ionic.Platform.isAndroid()) {
           window.plugins.jPushPlugin.resetBadge();
         } //清除bradge
+        window.plugins.jPushPlugin.setApplicationIconBadgeNumber(0);
         var alertContent = null;
         if (pusher && ionic.Platform.isAndroid()) {
           alertContent = pusher.openNotification.alert;
@@ -340,7 +342,6 @@ angular.module('starter', ['ionic', 'starter.controller', 'starter.config', 'ngC
           alertContent = event.aps.alert;
         };
         console.log('onOpenNotification:', alertContent);
-        alert('onOpenNotification:', alertContent);
       },
       onReceiveNotification: function(event) {
         if (ionic.Platform.isAndroid()) {
@@ -350,7 +351,6 @@ angular.module('starter', ['ionic', 'starter.controller', 'starter.config', 'ngC
         }
 
         console.log('onReceiveNotification', alertContent);
-        alert('onReceiveNotification', alertContent);
       },
       getRegistradionID: function() {
         return localStorage.getItem('jPushID', null);
@@ -359,6 +359,8 @@ angular.module('starter', ['ionic', 'starter.controller', 'starter.config', 'ngC
         if (ionic.Platform.isAndroid()) {
           window.plugins.jPushPlugin.resetBadge();
         }
+        window.plugins.jPushPlugin.setApplicationIconBadgeNumber(0);
+
       },
       init: function() {
         if (window.plugins && window.plugins.jPushPlugin) {
@@ -380,3 +382,8 @@ angular.module('starter', ['ionic', 'starter.controller', 'starter.config', 'ngC
       }
     };
   })
+  .filter('htmlContent',['$sce', function($sce) {
+	return function(input) {
+		return $sce.trustAsHtml(input);
+	}
+}])

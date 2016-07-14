@@ -134,6 +134,7 @@ span.icon-wechat-friends{
 }
 .company-intro p{
   text-indent: 2em;
+  font-size: 14px;
   line-height: 1.5;
   text-align: justify;
   padding: 0 20px;
@@ -178,4 +179,25 @@ h2 .uk-badge{
 }
 .slider-bar button.icon:before{
   line-height: inherit;
+}
+.button-login-wechat{
+  background-color: #009dd8;
+  display: block;
+  border-radius: 40px;
+  padding: 10px 0;
+}
+.member{
+  background: url('../img/member-bg.jpg') center top no-repeat;
+  background-size: contain;
+}
+.member-header{
+  text-align: center;
+  padding: 20px 0;
+  color: #fff;
+}
+.member-header img{
+  padding: 2px;
+  background-color: #fff;
+  border-radius: 50%;
+  box-sizing: content-box;
 }

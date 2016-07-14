@@ -8,8 +8,11 @@ dependencies: \
   /Users/cashely/Documents/cashely.shi/coding/imkb/platforms/ios/build/emulator/include/Cordova/NSMutableArray+QueueAdditions.h \
   /Users/cashely/Documents/cashely.shi/coding/imkb/platforms/ios/build/emulator/include/Cordova/CDVCommandDelegate.h \
   /Users/cashely/Documents/cashely.shi/coding/imkb/platforms/ios/build/emulator/include/Cordova/CDVInvokedUrlCommand.h \
+  /Users/cashely/Documents/cashely.shi/coding/imkb/platforms/ios/build/emulator/include/Cordova/CDVWebViewEngineProtocol.h \
   imkb/Plugins/cordova-plugin-qqsdk/TencentOpenAPI.framework/Headers/TencentOAuth.h \
   imkb/Plugins/cordova-plugin-qqsdk/TencentOpenAPI.framework/Headers/sdkdef.h \
   imkb/Plugins/cordova-plugin-qqsdk/TencentOpenAPI.framework/Headers/TencentOAuthObject.h \
+  imkb/Plugins/cordova-plugin-qqsdk/TencentOpenAPI.framework/Headers/TencentApiInterface.h \
+  imkb/Plugins/cordova-plugin-qqsdk/TencentOpenAPI.framework/Headers/TencentMessageObject.h \
   imkb/Plugins/cordova-plugin-qqsdk/TencentOpenAPI.framework/Headers/QQApiInterface.h \
   imkb/Plugins/cordova-plugin-qqsdk/TencentOpenAPI.framework/Headers/QQApiInterfaceObject.h

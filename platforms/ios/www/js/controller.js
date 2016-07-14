@@ -30,7 +30,7 @@ angular.module('starter.controller',[])
 			params:{
 				queryStr:$scope.queryKeys,
 				pageNo:pageNum,
-				indexPath : 1
+				indexPath : '5241e1d1ef224c6db86356560bf6ddd5'
 			}
 		}).success(function(res){
 				$scope.searchList = $scope.searchList.concat(res.rows);
@@ -83,11 +83,11 @@ angular.module('starter.controller',[])
 	// 分线给QQ好友
 	$scope.shareQQ = function(){
 		var args = {};
-		args.url = "http://www.utimor.com";
-		args.title = "临床诊疗助手--医疗行业知识宝藏";
-		args.description = "临床诊疗助手是一款为医生、药师等专业人士度身定做的药学软件，旨在为临床医生、药师、护士及医疗人员提供便捷的药物信息查询工具，并根据临床医生实际工作流程进行优化设计";
-		args.imageUrl = "http://www.utimor.com/wp-content/themes/ntimor/images/logo.png";
-		args.appName = "临床诊疗助手";
+		args.url = "http://www.immortalshealth.com";
+		args.title = "常春树·药--医疗行业知识宝藏";
+		args.description = "常春树·药是一款为医生、药师等专业人士度身定做的药学软件，旨在为临床医生、药师、护士及医疗人员提供便捷的药物信息查询工具，并根据临床医生实际工作流程进行优化设计";
+		args.imageUrl = "http://www.immortalshealth.com/pubshare/imkb-share-logo.png";
+		args.appName = "常春树·药";
 		YCQQ.shareToQQ(function(){
 		    console.log("share success");
 		},function(failReason){
@@ -97,12 +97,12 @@ angular.module('starter.controller',[])
 	// 分享到qq空间
 	$scope.shareQQzone = function($scope){
 		var args = {};
-		 args.url = "http://www.utimor.com";
-		args.title = "临床诊疗助手--医疗行业知识宝藏";
-		args.description = "临床诊疗助手是一款为医生、药师等专业人士度身定做的药学软件，旨在为临床医生、药师、护士及医疗人员提供便捷的药物信息查询工具，并根据临床医生实际工作流程进行优化设计";
-		 var imgs =['http://www.utimor.com/wp-content/themes/ntimor/images/logo.png',
-		 'http://www.utimor.com/wp-content/themes/ntimor/images/logo.png',
-		 'http://www.utimor.com/wp-content/themes/ntimor/images/logo.png'];
+		 args.url = "http://www.immortalshealth.com";
+		args.title = "常春树·药--医疗行业知识宝藏";
+		args.description = "常春树·药是一款为医生、药师等专业人士度身定做的药学软件，旨在为临床医生、药师、护士及医疗人员提供便捷的药物信息查询工具，并根据临床医生实际工作流程进行优化设计";
+		 var imgs =['http://www.immortalshealth.com/pubshare/imkb-share-logo.png',
+		 'http://www.immortalshealth.com/pubshare/imkb-share-logo.png',
+		 'http://www.immortalshealth.com/pubshare/imkb-share-logo.png'];
 		  args.imageUrl = imgs;
 		  YCQQ.shareToQzone(function () {
 		      console.log("share success");
@@ -114,12 +114,12 @@ angular.module('starter.controller',[])
 	$scope.shareWechat = function($scope){
 		Wechat.share({
 			message:{
-				title:"临床诊疗助手--医疗行业知识宝藏",
-				description:"临床诊疗助手是一款为医生、药师等专业人士度身定做的药学软件，旨在为临床医生、药师、护士及医疗人员提供便捷的药物信息查询工具，并根据临床医生实际工作流程进行优化设计",
-				thumb:"http://www.utimor.com/wp-content/themes/ntimor/images/logo.png",
+				title:"常春树·药--医疗行业知识宝藏",
+				description:"常春树·药是一款为医生、药师等专业人士度身定做的药学软件，旨在为临床医生、药师、护士及医疗人员提供便捷的药物信息查询工具，并根据临床医生实际工作流程进行优化设计",
+				thumb:"http://www.immortalshealth.com/pubshare/imkb-share-logo.png",
 				media:{
 					type: Wechat.Type.LINK,
-					webpageUrl: "http://www.utimor.com"
+					webpageUrl: "http://www.immortalshealth.com"
 				}
 			},
 			scene:Wechat.Scene.SESSION
@@ -133,12 +133,12 @@ angular.module('starter.controller',[])
 	$scope.shareWechatFriends = function($scope){
 		Wechat.share({
 			message:{
-				title:"临床诊疗助手--医疗行业知识宝藏",
-				description:"临床诊疗助手是一款为医生、药师等专业人士度身定做的药学软件，旨在为临床医生、药师、护士及医疗人员提供便捷的药物信息查询工具，并根据临床医生实际工作流程进行优化设计",
-				thumb:"http://www.utimor.com/wp-content/themes/ntimor/images/logo.png",
+				title:"常春树·药--医疗行业知识宝藏",
+				description:"常春树·药是一款为医生、药师等专业人士度身定做的药学软件，旨在为临床医生、药师、护士及医疗人员提供便捷的药物信息查询工具，并根据临床医生实际工作流程进行优化设计",
+				thumb:"http://www.immortalshealth.com/pubshare/imkb-share-logo.png",
 				media:{
 					type: Wechat.Type.LINK,
-					webpageUrl: "http://www.utimor.com"
+					webpageUrl: "http://www.immortalshealth.com"
 				}
 			},
 			scene:Wechat.Scene.TIMELINE
@@ -215,7 +215,7 @@ angular.module('starter.controller',[])
 		params:{
 			id:$rootScope.page.id,
 			sign:1,
-			indexPath:1,
+			indexPath:'5241e1d1ef224c6db86356560bf6ddd5',
 			imagePath:$rootScope.imagePath,
 			createUser:localStorage.getItem('sid')
 		}

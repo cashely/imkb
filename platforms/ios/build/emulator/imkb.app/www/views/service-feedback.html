@@ -1,0 +1,29 @@
+<ion-view view-title="意见反馈">
+    <ion-nav-bar class="bar-positive">
+        <ion-nav-back-button></ion-nav-back-button>
+        <ion-nav-buttons side="right">
+            <button class="button button-clear" ui-sref="index.service-add">
+                <i class="icon ion-ios-plus-empty"></i>
+            </button>
+        </ion-nav-buttons>
+    </ion-nav-bar>
+    <ion-content>
+        <ul class="list">
+            <li class="item item-icon-right" ng-repeat="item in serviceFeedbackList" ui-sref="index.service-check({id:item.id})">
+              <!--意见反馈-->
+                <div class="row">
+                    <h2 class="col-75">
+                        {{item.title}}
+                    </h2>
+                    <span class="item-note">{{item.updateDate}}</span>
+                </div>
+                <p class="row" style="padding-top:0;">
+                   <span class="col-75 item-content">{{item.needs}}</span>
+                   <span>{{item.status}}</span>
+                </p>
+                <i class="icon ion-ios-arrow-right button-small item-note"></i>
+            </li>
+        </ul>
+        <ion-infinite-scroll ng-if="isScrollServiceFeedbackList" on-infinite="loadMoreServiceFeedbackList()" distance="2%"></ion-infinite-scroll>
+    </ion-content>
+</ion-view>

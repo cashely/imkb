@@ -31,10 +31,10 @@
                 <span class="uk-badge">
                     {{item.label}}
                 </span>
-                {{item.tradeName ? (item.tradeName+' ') : ''}}{{item.genericName}}
+                <span ng-if="item.tradeName" ng-bind-html="(item.tradeName|htmlContent) + ' '"> </span><span ng-bind-html="item.genericName|htmlContent"></span>
               </h2>
               <div class="uk-comment-meta">
-                  {{item.spec}} {{item.manufacturerShort}} {{item.brandName}}
+                  {{item.spec}} <span ng-bind-html="item.manufacturerShort|htmlContent"></span> {{item.brandName}}
                   <span class="uk-navbar-flip">{{item.releaseDate}}</span>
 
               </div>

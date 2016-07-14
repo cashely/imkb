@@ -52,18 +52,20 @@
 </script>
 <script type="text/ng-template" id="member.html">
     <ion-view view-title="个人中心">
-        <ion-nav-bar class="bar-positive">
-            <ion-nav-back-button></ion-nav-back-button>
-            <ion-nav-buttons side="left">
-            </ion-nav-buttons>
-        </ion-nav-bar>
-        <ion-content>
+        <ion-content class="member" has-bouncing="true">
+            <div class="member-header">
+              <img ng-src="{{person.headImgUrl || 'img/qq.png'}}" width="75" />
+              <p>
+                {{person.userAlias}}
+              </p>
+            </div>
+            </div>
             <div class="list">
-                <a ui-sref="index.member-data" class="item item-icon-left item-icon-right">
+                <!-- <a ui-sref="index.member-data" class="item item-icon-left item-icon-right">
                     <i class="icon ion-ios-person item-note"></i>
                     个人信息
                     <i class="icon item-note ion-ios-arrow-right button-small"></i>
-                </a>
+                </a> -->
                 <a ui-sref="index.member-produceList" class="item item-icon-left item-icon-right">
                     <i class="icon ion-android-cloud-circle item-note"></i>
                     产品介绍
@@ -134,7 +136,7 @@
         <ion-content class="has-header">
             <!-- 产品介绍列表 -->
             <div class="produce-intro padding">
-                <p>临床诊疗助手是一款为医生、药师等专业人士度身定做的药学软件，旨在为临床医生、药师、护士及医疗人员提供便捷的药物信息查询工具，并根据临床医生实际工作流程进行优化设计，以满足医务工作者随时随地查询药物说明书信息的需求。临床诊疗助手收录了十几万条药品说明书，数据来自于药品生产厂家、国家药监局、医院等，来源权威可靠且持续更新。软件资料丰富、检索功能强大、简单易用，是临床诊疗中的好助手。</p>
+                <p>常春树·药是一款为医生、药师等专业人士度身定做的药学软件，旨在为临床医生、药师、护士及医疗人员提供便捷的药物信息查询工具，并根据临床医生实际工作流程进行优化设计，以满足医务工作者随时随地查询药物说明书信息的需求。临床诊疗助手收录了十几万条药品说明书，数据来自于药品生产厂家、国家药监局、医院等，来源权威可靠且持续更新。软件资料丰富、检索功能强大、简单易用，是临床诊疗中的好助手。</p>
             </div>
         </ion-content>
     </ion-view>
@@ -263,7 +265,7 @@
                 <textarea ng-model="service.content" placeholder="请输入您的反馈建议～" style="height:150px;"></textarea>
               </label>
               <div class="padding">
-                <button on-tap="serviceCommit()" class="button button-positive button-block">提交</button>
+                <button on-tap="serviceCommit()" class="button button-positive button-block">确定</button>
               </div>
             </div>
         </ion-content>

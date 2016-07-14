@@ -1,0 +1,17 @@
+{
+    "CoreTelephony.framework": 3,
+    "SystemConfiguration.framework": 3,
+    "Security.framework": 3,
+    "libiconv.tbd": 1,
+    "libsqlite3.tbd": 1,
+    "libstdc++.tbd": 1,
+    "libz.tbd": 2,
+    "libz.dylib": 1,
+    "libsqlite3.0.dylib": 1,
+    "libstdc++.6.dylib": 1,
+    "CFNetwork.framework": 1,
+    "CoreFoundation.framework": 1,
+    "Foundation.framework": 1,
+    "UIKit.framework": 1,
+    "AdSupport.framework": 1
+}

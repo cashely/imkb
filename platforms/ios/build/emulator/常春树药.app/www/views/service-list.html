@@ -1,0 +1,19 @@
+<ion-view view-title="在线服务">
+    <ion-nav-bar class="bar-positive">
+        <ion-nav-back-button></ion-nav-back-button>
+    </ion-nav-bar>
+    <ion-content>
+      <div class="list">
+          <a ui-sref="index.service-edit" class="item item-icon-left item-icon-right">
+              <i class="icon ion-compose item-note"></i>
+              说明书纠错
+              <span class="badge badge-assertive">{{listTotal.smsRecoveryCount}}</span>
+          </a>
+          <a ui-sref="index.service-feedback" class="item item-icon-left item-icon-right">
+              <i class="icon ion-chatbubbles item-note"></i>
+              意见反馈
+              <span class="badge badge-assertive">{{listTotal.onlineCount}}</span>
+          </a>
+      </div>
+    </ion-content>
+</ion-view>

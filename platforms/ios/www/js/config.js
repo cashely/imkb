@@ -86,6 +86,26 @@ angular.module('starter.config', ['ionic', 'starter.controller', 'ngCordova', 'j
                 $scope.collectTotals = res.userHouseCount;
               }
             });
+            //默认用户的所有个人信息个人信息
+
+            //获取用户个人信息
+            $scope.person = {};
+            $scope.person = {
+              headImgUrl:false,
+              userAlias:'正在获取中...'
+            }
+            showLoading('正在加载....');
+            $http({
+              url: $scope.serviceAddress + 'getUserByIdApp',
+              params: {
+                createUser: localStorage.getItem('sid')
+              },
+              method: 'POST'
+            }).success(function(res) {
+              $scope.person = res.datas;
+              console.log('用户信息', $scope.person.data);
+              hideLoading();
+            });
           }
         }
       }
@@ -327,7 +347,7 @@ angular.module('starter.config', ['ionic', 'starter.controller', 'ngCordova', 'j
                 params: {
                   createUser: localStorage.getItem('sid'),
                   sourceId: tid,
-                  indexPath: '1'
+                  indexPath: '5241e1d1ef224c6db86356560bf6ddd5'
                 }
               }).success(function(res) {
                 if (res.state == '1') {
@@ -563,6 +583,7 @@ angular.module('starter.config', ['ionic', 'starter.controller', 'ngCordova', 'j
             // var scope = "snsapi_userinfo";
             if (localStorage.getItem('autoLogin') == 'true') {
                 // 自动登录需要请求地址
+                showLoading();
                 $http({
                   url:$scope.serviceAddress + 'login',
                   method:'POST',
@@ -575,6 +596,10 @@ angular.module('starter.config', ['ionic', 'starter.controller', 'ngCordova', 'j
                   }else{
                     $state.go('index.search');
                   }
+                  hideLoading();
+                }).error(function(code){
+                  hideLoading();
+                  alertMsg('网络故障');
                 });
 
             }

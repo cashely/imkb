@@ -8,7 +8,7 @@ dependencies: \
   /Users/cashely/Documents/cashely.shi/coding/imkb/platforms/ios/build/emulator/include/Cordova/NSMutableArray+QueueAdditions.h \
   /Users/cashely/Documents/cashely.shi/coding/imkb/platforms/ios/build/emulator/include/Cordova/CDVCommandDelegate.h \
   /Users/cashely/Documents/cashely.shi/coding/imkb/platforms/ios/build/emulator/include/Cordova/CDVInvokedUrlCommand.h \
+  /Users/cashely/Documents/cashely.shi/coding/imkb/platforms/ios/build/emulator/include/Cordova/CDVWebViewEngineProtocol.h \
   /Users/cashely/Documents/cashely.shi/coding/imkb/platforms/ios/build/emulator/include/Cordova/CDVViewController.h \
   /Users/cashely/Documents/cashely.shi/coding/imkb/platforms/ios/build/emulator/include/Cordova/CDVCommandQueue.h \
-  /Users/cashely/Documents/cashely.shi/coding/imkb/platforms/ios/build/emulator/include/Cordova/CDVWhitelist.h \
   /Users/cashely/Documents/cashely.shi/coding/imkb/platforms/ios/build/emulator/include/Cordova/CDVScreenOrientationDelegate.h

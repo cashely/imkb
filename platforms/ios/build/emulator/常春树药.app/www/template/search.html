@@ -1,0 +1,43 @@
+<ion-view>
+    <ion-pane class="index">
+        <div class="logo" style="text-align:center">
+            <img width='220' src="img/logo.png"/>
+        </div>
+        <!-- <div class="list"> -->
+            <div class="list padding">
+                <div id="search" data-uk-dropdown="{mode:'click',justify:'#search'}" class="item-input-inset" style="background:none;overflow:visible;padding:0">
+                    
+                        
+                        <!-- <input type="search"  onfocus="javascript:this.blur();" class="uk-width-1-1" placeholder="" /> -->
+                        <button on-tap="openSearchModal()" class="button button-small button-block button-light stable"><i class="icon ion-search placeholder-icon">
+                        </i>请输入需要搜索的关键字...</button>
+                    <!-- </label> -->
+                </div>
+            </div>
+            <!-- </div> -->
+        <div class="list" style="position:absolute;top:155px;bottom:1px;width:100%;background-color:#fff">
+            <!-- <div class="item item-divider">
+                药品说明书
+            </div> -->
+            <ion-content>
+                <ion-item ng-repeat="item in indexData" ng-click="showPage(item.id)">
+                    <h2>
+                        {{item.title}}
+                    </h2>
+                    <div class="uk-comment-meta">
+                        <span class="uk-badge">
+                            {{item.label}}
+                        </span>
+                        <span class="uk-navbar-flip">{{item.source}} | {{item.release_date}}</span>
+                        
+                    </div>
+                </ion-item>
+                <ion-infinite-scroll
+                    ng-if="canLoadMore()"
+                    on-infinite="loadMore()"
+                    distance="2%">
+                </ion-infinite-scroll>
+            </ion-content>
+        </div>
+    </ion-pane>
+</ion-view>
