@@ -1,0 +1,43 @@
+<ion-view>
+        <ion-pane class="index" ng-controller="indexSearchController">
+            
+            <div class="logo" style="text-align:center">
+                <img width='90' src="img/logo.png"/>
+            </div>
+            <!-- <div class="list"> -->
+                <div class="list padding">
+                    <div id="search" data-uk-dropdown="{mode:'click',justify:'#search'}" class="item-input-inset" style="background:none;overflow:visible;padding:0">
+                       <!-- <input type="search"  onfocus="javascript:this.blur();" class="uk-width-1-1" placeholder="" /> -->
+                            <button on-tap="openSearchModal()" class="button button-small button-block button-light stable"><i class="icon ion-search placeholder-icon">
+                            </i>请输入需要搜索的关键字...</button>
+                        <!-- </label> -->
+                    </div>
+                </div>
+                <!-- </div> -->
+            <div class="list" style="position:absolute;top:180px;bottom:1px;width:100%;background-color:#fff">
+                <!-- <div class="item item-divider">
+                    药品说明书
+                </div> -->
+                <ion-content>
+                    <ion-item ng-repeat="item in indexData" on-tap="showPage(item.id)">
+                        <h2>
+                          <span class="uk-badge">
+                              {{item.label}}
+                          </span>
+                          {{item.tradeName ? (item.tradeName+' ') : ''}}{{item.genericName}}
+                        </h2>
+                        <div class="uk-comment-meta">
+                            {{item.spec}} {{item.manufacturerShort}} {{item.brandName}}
+                            <span class="uk-navbar-flip">{{item.releaseDate}}</span>
+
+                        </div>
+                    </ion-item>
+                    <ion-infinite-scroll
+                        ng-if="canLoadMore()"
+                        on-infinite="loadMore()"
+                        distance="1%">
+                    </ion-infinite-scroll>
+                </ion-content>
+            </div>
+        </ion-pane>
+    </ion-view>

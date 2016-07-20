@@ -54,7 +54,7 @@
     <ion-view view-title="个人中心">
         <ion-content class="member" has-bouncing="true">
             <div class="member-header">
-              <img ng-src="{{person.headImgUrl || 'img/qq.png'}}" width="75" />
+              <img ng-src="{{person.headImgUrl || 'img/default-logo.png'}}" width="75" />
               <p>
                 {{person.userAlias}}
               </p>
@@ -82,7 +82,9 @@
                     <i class="icon item-note ion-ios-arrow-right button-small"></i>
                 </a>
                 <div class="padding">
-                    <button ng-click="loginOut()" class="button button-assertive button-block">注销</button>
+                    <a ui-sref="login" ng-hide="isLogin" class="button button-positive button-block">登录</a>
+                    <button ng-click="loginOut()" ng-show="isLogin" class="button button-assertive button-block">注销</button>
+
                 </div>
             </div>
         </ion-content>
@@ -337,62 +339,4 @@
             </div>
   </ion-pane>
 </div>
-</script>
-<!-- search -->
-<script type="text/ng-template" id="search.html">
-    <ion-view>
-        <ion-pane class="index">
-            <div class="adv" ng-hide="isHideAdv" data-text="顶部栏">
-                <ion-slide-box show-pager=false delegate-handle="adv" does-continue=true auto-play=true>
-                    <ion-slide class="bg-positive">
-                        <img ng-src="img/tp_1.jpg"/>
-                    </ion-slide>
-                    <ion-slide>
-                        <img ng-src="img/tp_2.jpg"/>
-                    </ion-slide>
-                    <ion-slide>
-                        <img ng-src="img/tp_3.jpg"/>
-                    </ion-slide>
-                </ion-slide-box>
-            </div>
-            <div class="logo" style="text-align:center">
-                <img width='90' src="img/logo.png"/>
-            </div>
-            <!-- <div class="list"> -->
-                <div class="list padding">
-                    <div id="search" data-uk-dropdown="{mode:'click',justify:'#search'}" class="item-input-inset" style="background:none;overflow:visible;padding:0">
-                       <!-- <input type="search"  onfocus="javascript:this.blur();" class="uk-width-1-1" placeholder="" /> -->
-                            <button on-tap="openSearchModal()" class="button button-small button-block button-light stable"><i class="icon ion-search placeholder-icon">
-                            </i>请输入需要搜索的关键字...</button>
-                        <!-- </label> -->
-                    </div>
-                </div>
-                <!-- </div> -->
-            <div class="list" style="position:absolute;top:{{isHideAdv ? 180 :230}}px;bottom:1px;width:100%;background-color:#fff">
-                <!-- <div class="item item-divider">
-                    药品说明书
-                </div> -->
-                <ion-content>
-                    <ion-item ng-repeat="item in indexData" on-tap="showPage(item.id)">
-                        <h2>
-                          <span class="uk-badge">
-                              {{item.label}}
-                          </span>
-                          {{item.tradeName ? (item.tradeName+' ') : ''}}{{item.genericName}}
-                        </h2>
-                        <div class="uk-comment-meta">
-                            {{item.spec}} {{item.manufacturerShort}} {{item.brandName}}
-                            <span class="uk-navbar-flip">{{item.releaseDate}}</span>
-
-                        </div>
-                    </ion-item>
-                    <ion-infinite-scroll
-                        ng-if="canLoadMore()"
-                        on-infinite="loadMore()"
-                        distance="2%">
-                    </ion-infinite-scroll>
-                </ion-content>
-            </div>
-        </ion-pane>
-    </ion-view>
 </script>

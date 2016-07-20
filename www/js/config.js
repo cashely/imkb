@@ -9,55 +9,16 @@ angular.module('starter.config', ['ionic', 'starter.controller', 'ngCordova', 'j
       templateUrl: 'index.html',
       controller: function($state) {
         if (localStorage.getItem('autoLogin') == 'false' || !localStorage.getItem('autoLogin')) {
-          $state.go('login');
+          // $state.go('login');
         }
       }
     }).state('index.search', {
       url: '/search',
-      cache: true,
+      cache: false,
       views: {
         'index': {
-          templateUrl: 'search.html',
-          controller: function($scope, $http, $ionicModal, $rootScope, $timeout, $ionicSlideBoxDelegate) {
-            showLoading();
-            var page = 0;
-            $scope.indexData = [];
-            $scope.canLoadMore = function() {
-              if ($scope.indexData && $scope.indexData.length >= $scope.len) {
-                return false;
-              } else {
-                return true;
-              }
-            }
-            $scope.loadMore = function() {
-              if ($scope.isLoad) return;
-              $scope.isLoad = true;
-              page++;
-              $http({
-                url: $scope.serviceAddress + 'indexImkbApp',
-                params: {
-                  pageNo: page,
-                  pageSize: 10,
-                  indexPath: '5241e1d1ef224c6db86356560bf6ddd5'
-                }
-              }).success(function(res) {
-                for (v in res.rows) {
-                  ($scope.indexData).push(res.rows[v]);
-                }
-
-                console.log($scope.indexData[0].title);
-                $scope.isLoad = false;
-                hideLoading();
-                $scope.$broadcast('scroll.infiniteScrollComplete');
-              }).error(function(res, code) {
-                alertMsg('232');
-              });
-            };
-            // 自动关闭广告
-            $timeout(function() {
-              $scope.isHideAdv = true;
-            }, 5000);
-          }
+          templateUrl: 'views/search.html',
+          controller: 'indexSearchController'
         }
       }
     })
@@ -69,8 +30,13 @@ angular.module('starter.config', ['ionic', 'starter.controller', 'ngCordova', 'j
         'member': {
           templateUrl: 'member.html',
           controller: function($scope, $state, $rootScope, $http) {
+            $scope.isLogin = false;
+            if(localStorage.getItem('sid')){
+              $scope.isLogin = true;
+            }
             $scope.loginOut = function() {
               localStorage.setItem('autoLogin', false);
+              localStorage.removeItem('sid');
               $state.go('login');
             };
             // 获取收藏文章总数
@@ -102,8 +68,11 @@ angular.module('starter.config', ['ionic', 'starter.controller', 'ngCordova', 'j
               },
               method: 'POST'
             }).success(function(res) {
-              $scope.person = res.datas;
-              console.log('用户信息', $scope.person.data);
+              if(res.state ==1){
+                $scope.person = res.datas;
+              }else{
+                $scope.person.userAlias = '暂未登录';
+              }
               hideLoading();
             });
           }
@@ -577,7 +546,9 @@ angular.module('starter.config', ['ionic', 'starter.controller', 'ngCordova', 'j
     .state('login', {
       url: '/login',
       templateUrl: 'views/login.html',
-      controller: function($scope, $http, $state) {
+      controller: function($scope, $http, $state,$ionicPlatform) {
+        $scope.isInstallWechat = true;
+        
         if (localStorage.getItem('sid')) {
           (function(info) {
             // var scope = "snsapi_userinfo";
@@ -606,31 +577,38 @@ angular.module('starter.config', ['ionic', 'starter.controller', 'ngCordova', 'j
           })(localStorage.getItem('sid'));
         }
         $scope.wechatLogin = function() {
-          var scope = "snsapi_userinfo";
-            Wechat.auth(scope, function(response) {    // you may use response.code to get the access token.
-              //     alert(JSON.stringify(response));
-              $http({
-                url:$scope.serviceAddress + 'login',
-                method:'POST',
-                params:{
-                  code:response.code
-                }
-              }).success(function(res){
-                console.log(res,'res');
-                if(res.state == 1){
-                  localStorage.setItem('autoLogin','true');
-                  localStorage.setItem('sid', res.userId);
-                  $state.go('index.search');
-                }else{
-                  alertMsg(res.message);
-                }
-              })
-            }, function(reason) {
-              alertMsg(reason);
-              //     alert("Failed: " + reason);
-            });
-          }
+            var scope = "snsapi_userinfo";
+            Wechat.isInstalled(function (installed) {
+              if(installed){
+                  Wechat.auth(scope, function(response) {    // you may use response.code to get the access token.
+                  //     alert(JSON.stringify(response));
+                  showLoading('正在登录...');
+                  $http({
+                    url:$scope.serviceAddress + 'login',
+                    method:'POST',
+                    params:{
+                      code:response.code
+                    }
+                  }).success(function(res){
+                    if(res.state == 1){
+                      hideLoading();
+                      localStorage.setItem('autoLogin','true');
+                      localStorage.setItem('sid', res.userId);
+                      $state.go('index.search');
+                    }else{
+                      alertMsg(res.message);
+                    }
+                  })
+                }, function(reason) {
+                  alertMsg(reason);
+                  //     alert("Failed: " + reason);
+                });
+              }else{
+                alertMsg('请安装微信后重试！');
+              }
+            })
         }
+      }
 
     })
     .state('reg', {

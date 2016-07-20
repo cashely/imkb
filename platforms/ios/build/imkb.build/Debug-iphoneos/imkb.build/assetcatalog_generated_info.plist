@@ -11,6 +11,7 @@
 				<string>AppIcon29x29</string>
 				<string>AppIcon40x40</string>
 				<string>AppIcon57x57</string>
+				<string>AppIcon60x60</string>
 			</array>
 		</dict>
 	</dict>
@@ -23,6 +24,7 @@
 				<string>AppIcon29x29</string>
 				<string>AppIcon40x40</string>
 				<string>AppIcon57x57</string>
+				<string>AppIcon60x60</string>
 				<string>AppIcon50x50</string>
 				<string>AppIcon72x72</string>
 				<string>AppIcon76x76</string>
@@ -41,6 +43,16 @@
 			<string>LaunchImage-800-Portrait-736h</string>
 			<key>UILaunchImageOrientation</key>
 			<string>Portrait</string>
+			<key>UILaunchImageSize</key>
+			<string>{414, 736}</string>
+		</dict>
+		<dict>
+			<key>UILaunchImageMinimumOSVersion</key>
+			<string>8.0</string>
+			<key>UILaunchImageName</key>
+			<string>LaunchImage-800-Landscape-736h</string>
+			<key>UILaunchImageOrientation</key>
+			<string>Landscape</string>
 			<key>UILaunchImageSize</key>
 			<string>{414, 736}</string>
 		</dict>

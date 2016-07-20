@@ -164,13 +164,33 @@ angular.module('starter', ['ionic', 'starter.controller', 'starter.config', 'ngC
       $rootScope.pageModal.remove();
     };
     $rootScope.showFullPage = function(ns) {
-        $ionicModal.fromTemplateUrl('views/page-all.html', {
-          scope: $rootScope,
-          animation: 'slide-in-up'
-        }).then(function(modal) {
-          $rootScope.pageAllModal = modal;
-          $rootScope.pageAllModal.show();
-        });
+        if(localStorage.getItem('sid')){
+            $ionicModal.fromTemplateUrl('views/page-all.html', {
+              scope: $rootScope,
+              animation: 'slide-in-up'
+            }).then(function(modal) {
+              $rootScope.pageAllModal = modal;
+              $rootScope.pageAllModal.show();
+            });
+        }else{
+          $ionicPopup.confirm({
+            template:'您暂未登录，请登录',
+            cancelText:'暂不',
+            okText:'去登录'
+          }).then(function(res){
+            if(res){
+              Wechat.isInstalled(function (installed) {
+              //     WEIXININSTALL=installed;
+                if(installed){
+                  $rootScope.hidePage();
+                  $state.go('login')
+                }else{
+                  alertMsg('请安装微信后重试！');
+                }
+              });
+            }
+          })
+        }
       }
       // 添加收藏
     $rootScope.addCollect = function() {

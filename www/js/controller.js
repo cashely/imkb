@@ -97,7 +97,7 @@ angular.module('starter.controller',[])
 	// 分享到qq空间
 	$scope.shareQQzone = function($scope){
 		var args = {};
-		 args.url = "http://www.immortalshealth.com";
+	 	args.url = "http://www.immortalshealth.com";
 		args.title = "常春树·药--医疗行业知识宝藏";
 		args.description = "常春树·药是一款为医生、药师等专业人士度身定做的药学软件，旨在为临床医生、药师、护士及医疗人员提供便捷的药物信息查询工具，并根据临床医生实际工作流程进行优化设计";
 		 var imgs =['http://www.immortalshealth.com/pubshare/imkb-share-logo.png',
@@ -235,4 +235,38 @@ angular.module('starter.controller',[])
 	$scope.hideAllPage = function(){
 		$rootScope.pageAllModal.remove();
 	};
+})
+.controller('indexSearchController',function($scope, $http, $ionicModal, $rootScope, $timeout, $ionicSlideBoxDelegate){
+	showLoading();
+    var page = 0;
+    $scope.indexData = [];
+    $scope.canLoadMore = function() {
+      if ($scope.indexData && $scope.indexData.length >= $scope.len) {
+        return false;
+      } else {
+        return true;
+      }
+    }
+    $scope.loadMore = function() {
+      if ($scope.isLoad) return;
+      $scope.isLoad = true;
+      page++;
+      $http({
+        url: $scope.serviceAddress + 'indexImkbApp',
+        params: {
+          pageNo: page,
+          pageSize: 10,
+          indexPath: '5241e1d1ef224c6db86356560bf6ddd5'
+        }
+      }).success(function(res) {
+        for (v in res.rows) {
+          ($scope.indexData).push(res.rows[v]);
+        }
+        $scope.isLoad = false;
+        hideLoading();
+        $scope.$broadcast('scroll.infiniteScrollComplete');
+      }).error(function(res, code) {
+        alertMsg('232');
+      });
+    };
 })
