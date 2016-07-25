@@ -30,10 +30,9 @@ angular.module('starter.config', ['ionic', 'starter.controller', 'ngCordova', 'j
         'member': {
           templateUrl: 'member.html',
           controller: function($scope, $state, $rootScope, $http) {
+            $scope.isLogin = false;
             if(localStorage.getItem('sid')){
               $scope.isLogin = true;
-            }else{
-              $scope.isLogin = false;
             }
             $scope.loginOut = function() {
               localStorage.setItem('autoLogin', false);
@@ -547,8 +546,7 @@ angular.module('starter.config', ['ionic', 'starter.controller', 'ngCordova', 'j
     .state('login', {
       url: '/login',
       templateUrl: 'views/login.html',
-      controller: function($scope, $http, $state,$ionicPlatform) {
-        $scope.isInstallWechat = true;
+      controller: function($scope, $http, $state,$ionicPlatform,$rootScope) {
         
         if (localStorage.getItem('sid')) {
           (function(info) {

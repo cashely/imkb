@@ -38,6 +38,14 @@ angular.module('starter', ['ionic', 'starter.controller', 'starter.config', 'ngC
 
 
     $ionicPlatform.ready(function() {
+      console.log(Wechat);
+      console.log(2);
+      $rootScope.isInstallWechat = false;
+       Wechat.isInstalled(function (installed) {
+              if(installed){
+                $rootScope.isInstallWechat = true;
+              }
+      });
       Pusher.init();
       // 清除bradge
       Pusher.resetBradge();

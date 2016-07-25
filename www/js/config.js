@@ -546,8 +546,7 @@ angular.module('starter.config', ['ionic', 'starter.controller', 'ngCordova', 'j
     .state('login', {
       url: '/login',
       templateUrl: 'views/login.html',
-      controller: function($scope, $http, $state,$ionicPlatform) {
-        $scope.isInstallWechat = true;
+      controller: function($scope, $http, $state,$ionicPlatform,$rootScope) {
         
         if (localStorage.getItem('sid')) {
           (function(info) {
@@ -700,5 +699,5 @@ angular.module('starter.config', ['ionic', 'starter.controller', 'ngCordova', 'j
         }
       }
     });
-  $urlRouterProvider.otherwise('/login');
+  $urlRouterProvider.otherwise('/index/search');
 })
